@@ -281,3 +281,91 @@ footer {
 .shop-button:hover {
   background-color: #000;
 }
+
+.logo-tagline {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+  letter-spacing: 0.05em;
+}
+
+/* Shop Grid Section */
+.shop-grid {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.shop-grid h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.product-card {
+  max-width: 300px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.product-card p {
+  margin: 12px 0 6px;
+  font-size: 15px;
+  color: #333;
+}
+
+.product-card span {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-top: 4px;
+}
+
+.product-card .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.product-card input[type="number"] {
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.product-card button.add-to-cart {
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.product-card button.add-to-cart:hover {
+  background-color: #444;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

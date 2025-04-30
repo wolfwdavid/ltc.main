@@ -1,19 +1,57 @@
-<!-- Shop -->
-<section id="shop" class="shop">
-    <div class="shop-container">
-      <div class="shop-image">
-        <img src="img/ezadapt.png" alt="EZAdapt Logo">
+<!-- Shop Section -->
+<section id="shop" class="shop-grid">
+    <h2>EZ ADAPT</h2>
+    <div class="product-grid">
+  
+      <div class="product-card">
+        <img src="img/product-small.jpg" alt="Small Vesta Holder" />
+        <p>Vesta eating utensil holder (small, fits most thin silverware)</p>
+        <span>$20.00</span>
       </div>
-      <div class="shop-details">
-        <h2>SHOP</h2>
-        <h3>EZ ADAPT</h3>
-        <p>
-          This product line features devices that assist in Activities of Daily Living (ADLs).
-        </p>
-        <p>
-          Everyone likes the ability to be as independent as possible. This sleek, affordable product line will do just that!
-        </p>
-        <a href="#" class="shop-button">SHOP NOW</a>
+  
+      <div class="product-card">
+        <img src="img/product-medium.jpg" alt="Medium Vesta Holder" />
+        <p>Vesta eating utensil holder (medium, fits most silverware) (recommended)</p>
+        <span>$20.00</span>
       </div>
+  
+      <div class="product-card">
+        <img src="img/large.png" alt="Large Vesta Holder" />
+        <p>Vesta eating utensil holder (large, fits most thick silverware & plastics)</p>
+        <span>$20.00</span>
+      </div>
+  
     </div>
   </section>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".add-to-cart");
+  
+      buttons.forEach(button => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".product-card");
+          const title = card.querySelector("p").textContent.trim();
+          const qtyInput = card.querySelector("input[type='number']");
+          const quantity = parseInt(qtyInput.value) || 1;
+  
+          alert(`✅ Added ${quantity} x "${title}" to your cart!`);
+        });
+      });
+    });
+  </script>
+Divider
+  <div class="divider"></div>
+  
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Level The Curve. All rights reserved.</p>
+      <p>Follow us on social media:</p>
+      <ul class="social-media">
+        <li><a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a></li>
+        <li><a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a></li>
+        <li><a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a></li>
+      </ul>
+    </div>
+  </footer>  
