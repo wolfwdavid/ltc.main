@@ -20,7 +20,7 @@
     scene.background = new THREE.Color(backgroundColor);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.set(0, 0, 6);
+    camera.position.set(0, 0, 12);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
@@ -120,7 +120,7 @@
 
   function resetCamera() {
     if (!camera || !controls) return;
-    camera.position.set(0, 0, 6);
+    camera.position.set(0, 0, 12);
     controls.reset();
   }
 </script>
