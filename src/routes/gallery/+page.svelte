@@ -3,29 +3,26 @@
 </svelte:head>
 
 <section class="gallery">
-  <div class="gallery-content">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <!-- Gallery images will go here -->
-    </div>
+  <h1 class="section-title">GALLERY</h1>
+  <p class="subtitle">A look at our journey and our work</p>
+  <div class="gallery-grid">
+    <!-- Gallery images will go here -->
   </div>
 </section>
 
 <style>
   .gallery {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-  }
-
-  .gallery-content {
-    max-width: 1200px;
+    padding: 60px 40px;
+    max-width: 1100px;
     margin: auto;
     text-align: center;
   }
 
-  .gallery-content h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+  .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 40px;
   }
 
   .gallery-grid {

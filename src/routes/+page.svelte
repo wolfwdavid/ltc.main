@@ -22,6 +22,7 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    background-color: #000;
   }
 
   #background-video {
@@ -43,15 +44,21 @@
   }
 
   .hero-text h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 3em;
+    font-weight: 900;
     margin-bottom: 20px;
+    letter-spacing: 2px;
   }
 
   .hero-text h2 {
-    font-size: 2em;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
   }
 
   iframe {
     max-width: 100%;
+    margin-bottom: 20px;
   }
 </style>

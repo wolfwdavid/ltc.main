@@ -1,78 +1,69 @@
 <header>
-  <div class="logo">
-    <a href="/">
-      <img src="/img/ltc.png" alt="Level The Curve Logo" />
-    </a>
-    <span class="logo-tagline">Access, Independence, Dignity</span>
+  <div class="header-top">
+    <div class="logo">
+      <a href="/">
+        <img src="/img/ltc.png" alt="Level The Curve Logo" />
+      </a>
+    </div>
+    <nav>
+      <a href="/">LEVEL THE CURVE</a>
+      <a href="/about">ABOUT US</a>
+      <a href="/products">PRODUCTS</a>
+      <a href="/gallery">GALLERY</a>
+      <a href="/contact">CONTACT US</a>
+      <a href="/consultations">CONSULTATIONS</a>
+      <a href="/donations">DONATIONS</a>
+    </nav>
   </div>
-  <div class="social-media">
-    <a href="https://www.facebook.com/levelthecurve" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
-    <a href="https://www.instagram.com/levelthecurve/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/company/level-the-curve/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="/about">About Us</a></li>
-      <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/contact">Contact Us</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/contributor">Contributor</a></li>
-      <li><a href="/donations">Donations</a></li>
-    </ul>
-  </nav>
+  <div class="tagline">Access. Independence. Dignity.</div>
 </header>
 
 <style>
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    padding: 20px 40px 10px;
     background-color: #fff;
-    flex-wrap: wrap;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
   }
 
   .logo img {
-    height: 40px;
+    height: 45px;
   }
 
   .logo a {
     text-decoration: none;
   }
 
-  .logo-tagline {
-    display: block;
-    font-size: 14px;
+  nav {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
     color: #333;
-    margin-top: 5px;
-    letter-spacing: 0.05em;
-  }
-
-  .social-media {
-    display: flex;
-    gap: 12px;
-  }
-
-  .social-media a {
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-  }
-
-  nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav ul li {
-    margin: 0 20px;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    margin-top: 8px;
+    font-style: italic;
+    letter-spacing: 0.5px;
   }
 </style>

@@ -19,7 +19,7 @@
 
 <style>
   .about {
-    padding: 60px 20px;
+    padding: 60px 40px;
     background-color: #f9f9f9;
   }
 
@@ -28,30 +28,35 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
     gap: 40px;
   }
 
   .about-image img {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 8px;
   }
 
   .about-text {
-    max-width: 600px;
+    max-width: 500px;
     text-align: left;
   }
 
   .about-text h2 {
-    font-size: 32px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 20px;
   }
 
   .about-text p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
     color: #333;
   }
 </style>
