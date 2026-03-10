@@ -23,7 +23,7 @@
     scene.background = new THREE.Color(backgroundColor);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.set(0, 0, 12);
+    camera.position.set(0, 0, 20);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
@@ -55,7 +55,7 @@
         geometry.computeVertexNormals();
 
         const material = new THREE.MeshPhysicalMaterial({
-          color: 0x4a4a4a,
+          color: 0xb0b0b0,
           metalness: 0.4,
           roughness: 0.4,
           clearcoat: 0.3,
@@ -153,7 +153,7 @@
 
   function resetView() {
     if (!camera || !mesh) return;
-    camera.position.set(0, 0, 12);
+    camera.position.set(0, 0, 20);
     mesh.rotation.x = initialRotation.x;
     mesh.rotation.y = initialRotation.y;
   }
