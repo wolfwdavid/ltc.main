@@ -20,7 +20,7 @@
     scene.background = new THREE.Color(backgroundColor);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.set(0, 0, 0.15);
+    camera.position.set(0, 0, 3);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
@@ -77,7 +77,7 @@
         const size = new THREE.Vector3();
         boundingBox.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 3 / maxDim;
+        const scale = 30 / maxDim;
         mesh.scale.set(scale, scale, scale);
 
         scene.add(mesh);
@@ -120,7 +120,7 @@
 
   function resetCamera() {
     if (!camera || !controls) return;
-    camera.position.set(0, 0, 0.15);
+    camera.position.set(0, 0, 3);
     controls.reset();
   }
 </script>
