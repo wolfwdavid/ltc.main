@@ -23,7 +23,7 @@
     scene.background = new THREE.Color(backgroundColor);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.set(0, 0, 20);
+    camera.position.set(0, 0, 12);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
@@ -73,7 +73,7 @@
         const size = new THREE.Vector3();
         boundingBox.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 30 / maxDim;
+        const scale = 8 / maxDim;
         mesh.scale.set(scale, scale, scale);
 
         // Stand upright
@@ -153,7 +153,7 @@
 
   function resetView() {
     if (!camera || !mesh) return;
-    camera.position.set(0, 0, 20);
+    camera.position.set(0, 0, 12);
     mesh.rotation.x = initialRotation.x;
     mesh.rotation.y = initialRotation.y;
   }
