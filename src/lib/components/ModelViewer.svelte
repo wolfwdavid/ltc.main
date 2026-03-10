@@ -1,8 +1,5 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import * as THREE from 'three';
-  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-  import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
   let { modelUrl = '', backgroundColor = '#f0f0f0' } = $props();
 
@@ -11,20 +8,11 @@
   let isLoading = $state(true);
   let loadError = $state('');
 
-  onMount(() => {
-    initScene();
-    loadModel();
-    window.addEventListener('resize', onResize);
-  });
+  onMount(async () => {
+    const THREE = await import('three');
+    const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
+    const { STLLoader } = await import('three/addons/loaders/STLLoader.js');
 
-  onDestroy(() => {
-    if (animationId) cancelAnimationFrame(animationId);
-    if (controls) controls.dispose();
-    if (renderer) renderer.dispose();
-    window.removeEventListener('resize', onResize);
-  });
-
-  function initScene() {
     const width = container.clientWidth;
     const height = container.clientHeight;
 
@@ -64,10 +52,7 @@
     dirLight3.position.set(0, -3, 0);
     scene.add(dirLight3);
 
-    animate();
-  }
-
-  function loadModel() {
+    // Load STL model
     const loader = new STLLoader();
     loader.load(
       modelUrl,
@@ -105,13 +90,24 @@
         isLoading = false;
       }
     );
-  }
 
-  function animate() {
-    animationId = requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  }
+    function animate() {
+      animationId = requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', onResize);
+  });
+
+  onDestroy(() => {
+    if (typeof window === 'undefined') return;
+    if (animationId) cancelAnimationFrame(animationId);
+    if (controls) controls.dispose();
+    if (renderer) renderer.dispose();
+    window.removeEventListener('resize', onResize);
+  });
 
   function onResize() {
     if (!container || !renderer || !camera) return;
@@ -123,6 +119,7 @@
   }
 
   function resetCamera() {
+    if (!camera || !controls) return;
     camera.position.set(0, 0, 5);
     controls.reset();
   }
