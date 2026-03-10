@@ -4,7 +4,7 @@
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
-  let { modelUrl = '', backgroundColor = '#1a1a1a' } = $props();
+  let { modelUrl = '', backgroundColor = '#f0f0f0' } = $props();
 
   let container;
   let renderer, scene, camera, controls, animationId;
@@ -75,10 +75,10 @@
         geometry.computeVertexNormals();
 
         const material = new THREE.MeshPhysicalMaterial({
-          color: 0x2a2a2a,
-          metalness: 0.3,
-          roughness: 0.5,
-          clearcoat: 0.1,
+          color: 0x4a4a4a,
+          metalness: 0.4,
+          roughness: 0.4,
+          clearcoat: 0.3,
         });
 
         const mesh = new THREE.Mesh(geometry, material);
@@ -162,7 +162,7 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    background-color: #1a1a1a;
+    background-color: #f0f0f0;
   }
 
   .loading-overlay {
@@ -175,7 +175,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #333;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     gap: 16px;
@@ -185,7 +185,7 @@
   .spinner {
     width: 36px;
     height: 36px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(0, 0, 0, 0.1);
     border-top-color: #F5D547;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;

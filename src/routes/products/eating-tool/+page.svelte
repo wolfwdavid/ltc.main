@@ -17,7 +17,7 @@
 
   <h2 class="process-title">INTERACTIVE 3D MODEL</h2>
   <p class="viewer-subtitle">Explore the eating tool in 3D — rotate, zoom, and inspect every detail</p>
-  <ModelViewer modelUrl="/models/AM - Eating Tool - M thickness .15inch v1.stl" />
+  <ModelViewer modelUrl="/models/eating-tool.stl" />
 
   <div class="description">
     <p>
