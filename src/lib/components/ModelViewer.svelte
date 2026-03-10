@@ -68,6 +68,9 @@
 
         const mesh = new THREE.Mesh(geometry, material);
 
+        // Rotate to stand upright (CAD Z-up to Three.js Y-up)
+        mesh.rotation.x = -Math.PI / 2;
+
         geometry.computeBoundingBox();
         const boundingBox = geometry.boundingBox;
         const center = new THREE.Vector3();
