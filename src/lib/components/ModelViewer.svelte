@@ -33,9 +33,10 @@
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
     controls.enableZoom = true;
-    controls.enablePan = true;
+    controls.enablePan = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 2;
+    controls.autoRotateSpeed = 1.5;
+    controls.target.set(0, 0, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
