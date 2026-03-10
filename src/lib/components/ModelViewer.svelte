@@ -4,13 +4,16 @@
   let { modelUrl = '', backgroundColor = '#f0f0f0' } = $props();
 
   let container;
-  let renderer, scene, camera, controls, animationId;
+  let renderer, scene, camera, animationId, mesh;
   let isLoading = $state(true);
   let loadError = $state('');
 
+  let isDragging = false;
+  let previousMouse = { x: 0, y: 0 };
+  let initialRotation = { x: -Math.PI / 2, y: 0 };
+
   onMount(async () => {
     const THREE = await import('three');
-    const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
     const { STLLoader } = await import('three/addons/loaders/STLLoader.js');
 
     const width = container.clientWidth;
@@ -28,14 +31,6 @@
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
     container.appendChild(renderer.domElement);
-
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.08;
-    controls.enableZoom = true;
-    controls.enablePan = false;
-    controls.autoRotate = false;
-    controls.target.set(0, 0, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
@@ -66,22 +61,24 @@
           clearcoat: 0.3,
         });
 
-        const mesh = new THREE.Mesh(geometry, material);
+        mesh = new THREE.Mesh(geometry, material);
 
-        // Rotate to stand upright (CAD Z-up to Three.js Y-up)
-        mesh.rotation.x = -Math.PI / 2;
-
+        // Center the geometry
         geometry.computeBoundingBox();
         const boundingBox = geometry.boundingBox;
         const center = new THREE.Vector3();
         boundingBox.getCenter(center);
-        mesh.position.sub(center);
+        geometry.translate(-center.x, -center.y, -center.z);
 
         const size = new THREE.Vector3();
         boundingBox.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
         const scale = 30 / maxDim;
         mesh.scale.set(scale, scale, scale);
+
+        // Stand upright
+        mesh.rotation.x = initialRotation.x;
+        mesh.rotation.y = initialRotation.y;
 
         scene.add(mesh);
         isLoading = false;
@@ -96,18 +93,51 @@
 
     function animate() {
       animationId = requestAnimationFrame(animate);
-      controls.update();
       renderer.render(scene, camera);
     }
     animate();
 
+    // Drag to rotate model
+    const canvas = renderer.domElement;
+    canvas.addEventListener('pointerdown', onPointerDown);
+    canvas.addEventListener('pointermove', onPointerMove);
+    canvas.addEventListener('pointerup', onPointerUp);
+    canvas.addEventListener('pointerleave', onPointerUp);
+    canvas.addEventListener('wheel', onWheel, { passive: false });
+
     window.addEventListener('resize', onResize);
   });
+
+  function onPointerDown(e) {
+    isDragging = true;
+    previousMouse = { x: e.clientX, y: e.clientY };
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging || !mesh) return;
+    const dx = e.clientX - previousMouse.x;
+    const dy = e.clientY - previousMouse.y;
+
+    mesh.rotation.y += dx * 0.01;
+    mesh.rotation.x += dy * 0.01;
+
+    previousMouse = { x: e.clientX, y: e.clientY };
+  }
+
+  function onPointerUp() {
+    isDragging = false;
+  }
+
+  function onWheel(e) {
+    if (!camera) return;
+    e.preventDefault();
+    camera.position.z += e.deltaY * 0.01;
+    camera.position.z = Math.max(2, Math.min(30, camera.position.z));
+  }
 
   onDestroy(() => {
     if (typeof window === 'undefined') return;
     if (animationId) cancelAnimationFrame(animationId);
-    if (controls) controls.dispose();
     if (renderer) renderer.dispose();
     window.removeEventListener('resize', onResize);
   });
@@ -121,10 +151,11 @@
     renderer.setSize(width, height);
   }
 
-  function resetCamera() {
-    if (!camera || !controls) return;
+  function resetView() {
+    if (!camera || !mesh) return;
     camera.position.set(0, 0, 12);
-    controls.reset();
+    mesh.rotation.x = initialRotation.x;
+    mesh.rotation.y = initialRotation.y;
   }
 </script>
 
@@ -143,8 +174,8 @@
     {/if}
   </div>
   <div class="viewer-controls">
-    <span class="hint"><i class="fa fa-hand-pointer-o"></i> Drag to rotate &bull; Scroll to zoom &bull; Right-click to pan</span>
-    <button class="reset-btn" onclick={resetCamera}>
+    <span class="hint"><i class="fa fa-hand-pointer-o"></i> Drag to rotate model &bull; Scroll to zoom</span>
+    <button class="reset-btn" onclick={resetView}>
       <i class="fa fa-refresh"></i> Reset View
     </button>
   </div>
@@ -163,6 +194,11 @@
     overflow: hidden;
     position: relative;
     background-color: #f0f0f0;
+    cursor: grab;
+  }
+
+  .viewer-container:active {
+    cursor: grabbing;
   }
 
   .loading-overlay {
