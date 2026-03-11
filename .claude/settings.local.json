@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(where:*)",
+      "Bash(python:*)",
+      "Bash(rm:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(mv:*)"
+    ]
+  }
+}

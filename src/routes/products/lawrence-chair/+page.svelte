@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <svelte:head>
   <title>Lawrence Chair - Level The Curve</title>
 </svelte:head>
@@ -7,7 +11,7 @@
   <p class="highlight">Great way to exercise your spine</p>
 
   <div class="hero-image">
-    <img src="/img/large.png" alt="2025 model of Lawrence Chair" />
+    <img src="{base}/img/large.png" alt="2025 model of Lawrence Chair" />
     <p class="caption">2025 model of Lawrence Chair by David White Wolf and Alisa Mizukami</p>
   </div>
 
@@ -21,17 +25,17 @@
 
   <div class="process-images">
     <div class="process-image">
-      <img src="/img/large.png" alt="2017 model of Lawrence Chair by Stefan Henry" />
+      <img src="{base}/img/large.png" alt="2017 model of Lawrence Chair by Stefan Henry" />
       <p class="caption">2017 model of Lawrence Chair by Stefan Henry</p>
     </div>
     <div class="process-image">
-      <img src="/img/large.png" alt="LTC Members taking picture with chair" />
+      <img src="{base}/img/large.png" alt="LTC Members taking picture with chair" />
       <p class="caption">LTC Members taking picture with chair</p>
     </div>
   </div>
 
   <div class="process-single">
-    <img src="/img/large.png" alt="Physical prototype of Lawrence Chair" />
+    <img src="{base}/img/large.png" alt="Physical prototype of Lawrence Chair" />
     <p class="caption">Physical prototype of Lawrence Chair</p>
   </div>
 </section>

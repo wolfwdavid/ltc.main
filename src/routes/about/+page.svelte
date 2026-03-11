@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <svelte:head>
   <title>About Us - Level The Curve</title>
 </svelte:head>
@@ -5,7 +9,7 @@
 <section class="about">
   <div class="about-content">
     <div class="about-image">
-      <img src="/img/stefan_james_khan.jpg" alt="About Level The Curve" />
+      <img src="{base}/img/stefan_james_khan.jpg" alt="About Level The Curve" />
     </div>
     <div class="about-text">
       <h2>ABOUT US</h2>

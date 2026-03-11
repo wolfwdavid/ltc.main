@@ -1,18 +1,22 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <header>
   <div class="header-top">
     <div class="logo">
-      <a href="/">
-        <img src="/img/ltc.png" alt="Level The Curve Logo" />
+      <a href="{base}/">
+        <img src="{base}/img/ltc.png" alt="Level The Curve Logo" />
       </a>
     </div>
     <nav>
-      <a href="/">LEVEL THE CURVE</a>
-      <a href="/about">ABOUT US</a>
-      <a href="/products">PRODUCTS</a>
-      <a href="/gallery">GALLERY</a>
-      <a href="/contact">CONTACT US</a>
-      <a href="/consultations">CONSULTATIONS</a>
-      <a href="/donations">DONATIONS</a>
+      <a href="{base}/">LEVEL THE CURVE</a>
+      <a href="{base}/about">ABOUT US</a>
+      <a href="{base}/products">PRODUCTS</a>
+      <a href="{base}/gallery">GALLERY</a>
+      <a href="{base}/contact">CONTACT US</a>
+      <a href="{base}/consultations">CONSULTATIONS</a>
+      <a href="{base}/donations">DONATIONS</a>
     </nav>
   </div>
   <div class="tagline">Access. Independence. Dignity.</div>

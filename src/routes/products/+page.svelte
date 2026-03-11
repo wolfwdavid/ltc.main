@@ -1,39 +1,41 @@
 <script>
+  import { base } from '$app/paths';
+
   const projects = [
     {
       title: 'UNIVERSAL EATING TOOL',
       description: 'Whatever it is, the way you tell your story online can make all the difference.',
-      image: '/img/ezadapt.png',
+      image: `${base}/img/ezadapt.png`,
       alt: 'Universal Eating Tool',
-      link: '/products/eating-tool'
+      link: `${base}/products/eating-tool`
     },
     {
       title: 'LAWRENCE CHAIR',
       description: 'Whatever it is, the way you tell your story online can make all the difference.',
-      image: '/img/large.png',
+      image: `${base}/img/large.png`,
       alt: 'Lawrence Chair',
-      link: '/products/lawrence-chair'
+      link: `${base}/products/lawrence-chair`
     },
     {
       title: 'VULCAN GRIP',
       description: 'Whatever it is, the way you tell your story online can make all the difference.',
-      image: '/img/ezadapt.png',
+      image: `${base}/img/ezadapt.png`,
       alt: 'Vulcan Grip',
-      link: '/products/vulcan-grip'
+      link: `${base}/products/vulcan-grip`
     },
     {
       title: 'WHEELCHAIR RAMP',
       description: 'Whatever it is, the way you tell your story online can make all the difference.',
-      image: '/img/large.png',
+      image: `${base}/img/large.png`,
       alt: 'Wheelchair Ramp',
-      link: '/products/wheelchair-ramp'
+      link: `${base}/products/wheelchair-ramp`
     },
     {
       title: 'LEG BAG DISPENSER',
       description: 'Whatever it is, the way you tell your story online can make all the difference.',
-      image: '/img/ezadapt.png',
+      image: `${base}/img/ezadapt.png`,
       alt: 'Leg Bag Dispenser',
-      link: '/products/leg-bag-dispenser'
+      link: `${base}/products/leg-bag-dispenser`
     }
   ];
 </script>

@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import ModelViewer from '$lib/components/ModelViewer.svelte';
 </script>
 
@@ -11,13 +12,13 @@
   <p class="highlight">Helping individuals with low hand dexterity use eating utensils</p>
 
   <div class="hero-image">
-    <img src="/img/ezadapt.png" alt="Size Medium Universal Eating Tools" />
+    <img src="{base}/img/ezadapt.png" alt="Size Medium Universal Eating Tools" />
     <p class="caption">Size Medium Universal Eating Tools</p>
   </div>
 
   <h2 class="process-title">INTERACTIVE 3D MODEL</h2>
   <p class="viewer-subtitle">Explore the eating tool in 3D — rotate, zoom, and inspect every detail</p>
-  <ModelViewer modelUrl="/models/eating-tool.stl" />
+  <ModelViewer modelUrl="{base}/models/eating-tool.stl" />
 
   <div class="description">
     <p>
@@ -48,11 +49,11 @@
 
   <div class="process-images">
     <div class="process-image">
-      <img src="/img/ezadapt.png" alt="Eating Tool prototype by Apoorva Avadhana" />
+      <img src="{base}/img/ezadapt.png" alt="Eating Tool prototype by Apoorva Avadhana" />
       <p class="caption">Eating Tool prototype by Apoorva Avadhana</p>
     </div>
     <div class="process-image">
-      <img src="/img/large.png" alt="Modified Eating Tool with Latch by David White Wolf" />
+      <img src="{base}/img/large.png" alt="Modified Eating Tool with Latch by David White Wolf" />
       <p class="caption">Modified Eating Tool with Latch by David White Wolf</p>
     </div>
   </div>

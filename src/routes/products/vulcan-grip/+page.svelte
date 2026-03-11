@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <svelte:head>
   <title>Vulcan Grip - Level The Curve</title>
 </svelte:head>
@@ -7,7 +11,7 @@
   <p class="highlight">Versatile object holder, clasping onto everyday tools with a 'vulcan' grip</p>
 
   <div class="hero-image">
-    <img src="/img/ezadapt.png" alt="Flexible Strap designed by engineer Apoorva Avadhana" />
+    <img src="{base}/img/ezadapt.png" alt="Flexible Strap designed by engineer Apoorva Avadhana" />
     <p class="caption">Flexible Strap designed by engineer Apoorva Avadhana</p>
   </div>
 
@@ -21,11 +25,11 @@
 
   <div class="process-images">
     <div class="process-image">
-      <img src="/img/ezadapt.png" alt="2017 version of Vulcan Grip" />
+      <img src="{base}/img/ezadapt.png" alt="2017 version of Vulcan Grip" />
       <p class="caption">2017 version of Vulcan Grip</p>
     </div>
     <div class="process-image">
-      <img src="/img/large.png" alt="Co-Founder Eli Ramos using 2017 Vulcan Grip" />
+      <img src="{base}/img/large.png" alt="Co-Founder Eli Ramos using 2017 Vulcan Grip" />
       <p class="caption">Co-Founder Eli Ramos using 2017 Vulcan Grip</p>
     </div>
   </div>

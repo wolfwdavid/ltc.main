@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <svelte:head>
   <title>Wheelchair Ramp - Level The Curve</title>
 </svelte:head>
@@ -7,7 +11,7 @@
   <p class="highlight">Can't get up the stairs? We got you!</p>
 
   <div class="hero-image">
-    <img src="/img/large.png" alt="How the Wheelchair Ramp could be used" />
+    <img src="{base}/img/large.png" alt="How the Wheelchair Ramp could be used" />
     <p class="caption">How the Wheelchair Ramp could be used</p>
   </div>
 
@@ -21,11 +25,11 @@
 
   <div class="process-images">
     <div class="process-image">
-      <img src="/img/large.png" alt="Wheelchair Ramp by Aporva Avadhana, David White Wolf, Stefan Henry, and Alisa Mizukami" />
+      <img src="{base}/img/large.png" alt="Wheelchair Ramp by Aporva Avadhana, David White Wolf, Stefan Henry, and Alisa Mizukami" />
       <p class="caption">Wheelchair Ramp by Aporva Avadhana, David White Wolf, Stefan Henry, and Alisa Mizukami</p>
     </div>
     <div class="process-image">
-      <img src="/img/large.png" alt="Early version of Wheelchair Ramp made of steel" />
+      <img src="{base}/img/large.png" alt="Early version of Wheelchair Ramp made of steel" />
       <p class="caption">Early version of Wheelchair Ramp made of steel</p>
     </div>
   </div>

@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <svelte:head>
   <title>Leg Bag Dispenser - Level The Curve</title>
 </svelte:head>
@@ -7,7 +11,7 @@
   <p class="highlight">Most efficient way to clean out a leg bag with no risk of leakage or embarrassing moments!</p>
 
   <div class="hero-image">
-    <img src="/img/large.png" alt="Leg Bag Dispenser being used" />
+    <img src="{base}/img/large.png" alt="Leg Bag Dispenser being used" />
     <p class="caption">Leg Bag Dispenser being used (spearheaded by Sauda Musherure)</p>
   </div>
 
@@ -33,11 +37,11 @@
 
   <div class="process-images">
     <div class="process-image">
-      <img src="/img/ezadapt.png" alt="Leg Bag Dispenser casing" />
+      <img src="{base}/img/ezadapt.png" alt="Leg Bag Dispenser casing" />
       <p class="caption">Leg Bag Dispenser casing by Alisa Mizukami and David White Wolf</p>
     </div>
     <div class="process-image">
-      <img src="/img/large.png" alt="Leg Bag Dispenser Packaging and Cover" />
+      <img src="{base}/img/large.png" alt="Leg Bag Dispenser Packaging and Cover" />
       <p class="caption">Leg Bag Dispenser Packaging and Cover by Stefan Henry</p>
     </div>
   </div>
